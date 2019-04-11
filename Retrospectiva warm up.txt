@@ -1,0 +1,14 @@
+Que hicimos mal
+1. Hicimos user stories demás, que podrían haber sido sub tareas de otra user storie
+2. Pusimos dos user stories con un mismo beneficio
+
+Que hicimos bien
+1. Buena comunicación y planificación
+2. Demo del trabajo
+3. Uso correcto del template de user stories
+4. Tiempo bien distribuido
+5. Aprovechamos el warm up para detallar los requerimientos
+
+Que mejoraríamos
+1. Mejorar la redacción de las user stories
+2. Mejorar la distribuición de las tareas

@@ -1,7 +1,0 @@
-	Warm-up
--us 3 y 4, hacerlo con sub task.
--la us 1 no queda muy clara, cualquier cosa se le pone 
-en descripcion para dar mas detalles.
--testear todo y documentar todo paso a paso(salida esperada y salida real),
- sino usar alguna herramienta.
--explotar la us 9.

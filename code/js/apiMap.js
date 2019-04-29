@@ -11,7 +11,6 @@ function addInfoBubble(map) {
 
     map.addObject(group);
 
-
     group.addEventListener('tap', function (evt) {
 
         var bubble =  new H.ui.InfoBubble(evt.target.getPosition(), {
@@ -21,11 +20,7 @@ function addInfoBubble(map) {
 
     ui.addBubble(bubble);
     }, false);
-
-    
-
 }
-
 
 var platform = new H.service.Platform({
     app_id: 'devportal-demo-20180625',

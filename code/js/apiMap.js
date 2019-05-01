@@ -20,6 +20,29 @@ function addInfoBubble(map) {
 
     ui.addBubble(bubble);
     }, false);
+    addMarkerToGroup(group, {lat:-37.318796, lng:-59.138583},
+        '<div><a href=>Montevideo y 9 de julio</a>' +
+        '</div><div >Basura<br>Cantidad: Baja</div>');
+
+    addMarkerToGroup(group, {lat:-37.325354, lng: -59.136346},
+        '<div ><a href=>Sarmiento y 9 de julio</a>' +
+        '</div><div >Basura<br>Cantidad: Baja</div>');
+
+    addMarkerToGroup(group, {lat: -37.325986, lng: -59.147128},
+        '<div ><a href=>Av. Peron y Av. Espania</a>' +
+        '</div><div >Basura<br>Cantidad: Media</div>');
+
+    addMarkerToGroup(group, {lat: -37.311726, lng: -59.128931},
+        '<div ><a href=>Uriburu y Montiel</a>' +
+        '</div><div >Basura<br>Cantidad: Media</div>');
+
+    addMarkerToGroup(group, {lat: -37.321976, lng: -59.121555},
+        '<div ><a href=>Pinto y Moreno</a>' +
+        '</div><div >Basura<br>Cantidad: Alta</div>');
+
+    addMarkerToGroup(group, {lat: -37.330662, lng: -59.128889},
+        '<div ><a href=>Constitucion y Paz</a>' +
+        '</div><div >Basura<br>Cantidad: Alta</div>');
 }
 
 var platform = new H.service.Platform({

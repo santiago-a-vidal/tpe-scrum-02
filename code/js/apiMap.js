@@ -43,6 +43,7 @@ function addInfoBubble(map) {
     addMarkerToGroup(group, {lat: -37.330662, lng: -59.128889},
         '<div ><a href=>Constitucion y Paz</a>' +
         '</div><div >Basura<br>Cantidad: Alta</div>');
+        
 }
 
 var platform = new H.service.Platform({

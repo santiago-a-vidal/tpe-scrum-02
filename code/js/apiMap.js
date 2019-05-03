@@ -1,23 +1,36 @@
+/**
+ * Crea un nuevo marker y lo agrega al grupo
+    group: donde se guarda
+    coord: localizacion
+    html : info asociada
+ */
 
 function addMarkerToGroup(group, coordinate, html) {
-    var marker = new H.map.Marker(coordinate);
-
+    let marker = new H.map.Marker(coordinate);
+  // agrega datos del marker   // add custom data to the marker
     marker.setData(html);
     group.addObject(marker);
 }
 
+/**
+ * Agrega los markers mostrando la posicion
+ * Clickeando en el marker abre la info que contiene el HTML
+ * map :Instancia Map con la app
+ */
+
 function addInfoBubble(map) {
-    var group = new H.map.Group();
+    let group = new H.map.Group();
 
     map.addObject(group);
-
+//  envento tap': abre la info del group
     group.addEventListener('tap', function (evt) {
 
-        var bubble =  new H.ui.InfoBubble(evt.target.getPosition(), {
-
+//     para todos los objetos que contiene
+        let bubble =  new H.ui.InfoBubble(evt.target.getPosition(), {
+//     lee la info
         content: evt.target.getData()
     });
-
+//  muestra la info
     ui.addBubble(bubble);
     }, false);
     addMarkerToGroup(group, {lat:-37.318796, lng:-59.138583},
@@ -43,29 +56,35 @@ function addInfoBubble(map) {
     addMarkerToGroup(group, {lat: -37.330662, lng: -59.128889},
         '<div ><a href=>Constitucion y Paz</a>' +
         '</div><div >Basura<br>Cantidad: Alta</div>');
-        
+
 }
 
-var platform = new H.service.Platform({
+/**
+ * Se inicia la api
+ */
+
+let platform = new H.service.Platform({
     app_id: 'devportal-demo-20180625',
     app_code: '9v2BkviRwi9Ot26kp2IysQ',
     useHTTPS: true
 });
-var pixelRatio = window.devicePixelRatio || 1;
-var defaultLayers = platform.createDefaultLayers({
+let pixelRatio = window.devicePixelRatio || 1;
+let defaultLayers = platform.createDefaultLayers({
     tileSize: pixelRatio === 1 ? 256 : 512,
     ppi: pixelRatio === 1 ? undefined : 320
 });
-
-var map = new H.Map(document.getElementById('map'),
+// ininicia el mapa en Tandil
+let map = new H.Map(document.getElementById('map'),
     defaultLayers.normal.map,{
     center: {lat: -37.32167, lng: -59.13316},
     zoom: 14,
     pixelRatio: pixelRatio
 });
 
-var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+// behavior: interacciones del mapa(paneo/zoom)
+let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+// crea la interfaz del usuario(ui)
+let ui = H.ui.UI.createDefault(map, defaultLayers);
 
-var ui = H.ui.UI.createDefault(map, defaultLayers);
-
+// llama a la funcion para usar el mapa
 addInfoBubble(map);

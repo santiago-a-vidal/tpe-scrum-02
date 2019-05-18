@@ -11,9 +11,9 @@ Pereyra Yraola, Eduardo Jose - Carpinetti, Heroel - Wesenack, Ezequiel - Careri,
 [Criterio de DONE](DONE.md)
 
 ### Retrospective
-[Retrospective Warm up](Retrospective/warmUp.md)
-[Retrospective Sprint 1](Retrospective/sprint1.md)
-[Retrospective Sprint 2](Retrospective/sprint2.md)
+[Retrospective Warm up](Retrospective/WarmUp.md)
+[Retrospective Sprint 1](Retrospective/RetrospectiveSprint1.md)
+[Retrospective Sprint 2](Retrospective/RetrospectiveSprint2.md)
 
 ### Sprint Planning
 [Sprint Planning 1](SprintPlanning/SprintPlanning1.md)

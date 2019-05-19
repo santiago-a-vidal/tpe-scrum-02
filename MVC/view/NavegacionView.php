@@ -16,6 +16,10 @@ class NavegacionView
     $this->smarty->display('templates/home.tpl');
   }
 
+  function User(){
+    $this->smarty->display('templates/user.tpl');
+  }
+
 }
 
  ?>

@@ -9,7 +9,8 @@ class ConfigApp
     public static $PARAMS = 'params';
     public static $ACTIONS = [
       ''=> 'NavegacionController#Home',
-      'home'=> 'NavegacionController#Home'
+      'home'=> 'NavegacionController#Home',
+      'user'=> 'NavegacionController#User'
     ];
 
 }

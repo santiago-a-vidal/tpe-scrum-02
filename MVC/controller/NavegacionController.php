@@ -18,6 +18,10 @@ class NavegacionController
     $this->NavegacionView->Home();
   }
 
+  function user(){
+    $this->NavegacionView->User();
+  }
+
   function deposito(){
     
     $this->NavegacionView->Deposito();

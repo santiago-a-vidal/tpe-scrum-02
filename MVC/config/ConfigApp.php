@@ -10,7 +10,8 @@ class ConfigApp
     public static $ACTIONS = [
       ''=> 'NavegacionController#Home',
       'home'=> 'NavegacionController#Home',
-      'user'=> 'NavegacionController#User'
+      'user'=> 'NavegacionController#User',
+      'register'=> 'NavegacionController#Register'
     ];
 
 }

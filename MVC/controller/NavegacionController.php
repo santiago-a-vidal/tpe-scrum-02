@@ -27,7 +27,10 @@ class NavegacionController
     $this->NavegacionView->Deposito();
   }
 
-  
+  function register(){
+    
+    $this->NavegacionView->Register();
+  }
 
 }
 

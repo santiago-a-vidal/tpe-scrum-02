@@ -20,6 +20,10 @@ class NavegacionView
     $this->smarty->display('templates/user.tpl');
   }
 
+  function Register(){
+    $this->smarty->display('templates/register.tpl');
+  }
+
 }
 
  ?>

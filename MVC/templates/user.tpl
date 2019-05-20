@@ -4,13 +4,31 @@
 
 		<div class="container">
 
-			<div class="row"> 
+			<div class="row">
 					<div class="col">
 						<div id="map" class="" style="width: 550px; height: 550px; background: grey"></div>
 					</div>
 					<div class="col mt-3">
-						
-                        ACA VA EL FORMULARIO...
+						<div class="container" style="max-width:600px;padding:40px 20px;background:#ebeff2">
+						 <form class="form-horizontal control-label col-sm" role="form">
+							<h3>Reporte</h3>
+							<h5>Ubicacion</h5>
+							<label for="InputLatitud">Latitud</label>
+							<input type="latitud" class="form-control" id="latitud" placeholder="-37.318796">
+							<label for="InputLongitud">Longitud</label>
+							<input type="longitud" class="form-control" id="longitud" placeholder="-59.138583">
+							<!-- ACA EL MAPA INTERACTIVO -->
+							<br>
+							<h5>Descripcion (opcional)</h5>
+							<textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+							<br>
+							<h5>Adjuntar foto</h5>
+							<input type="file" name="imagen" value="imagen">
+							<br>
+							<br>
+							<button type="submit" class="btn btn-primary mb-2">Submit</button>
+						 </form>
+						</div>
 
 					</div>
 			</div>

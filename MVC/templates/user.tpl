@@ -10,19 +10,24 @@
 				</div>
 				<div class="col">
 					<div class="" style="max-width:600px;padding:7px 20px;background:#ebeff2">
-						<form class="form-horizontal control-label col-sm" role="form">
+						<form class="form-horizontal control-label col-sm" role="form" action="userReport" method="post" enctype="multipart/form-data">
 							<h3>Reporte</h3>
+							{if !empty($error) }
+							 <div class="alert alert-danger" role="alert">{$error}</div>
+							{/if}
 							<h6 class="mt-3">Marque en el mapa la ubicacion de la basura.</h6>
+							<label for="InputUsuario">Usuario</label>
+							<input type="text" class="form-control" id="usuario" name="usuario" placeholder="" value="" required>
 							<label for="InputLatitud">Latitud</label>
-							<input type="latitud" class="form-control lat" id="latitud" placeholder="-37.318796" value="">
+							<input type="latitud" class="form-control lat" id="latitud" name="latitud" placeholder="-37.318796" value="" required>
 							<label for="InputLongitud">Longitud</label>
-							<input type="longitud" class="form-control lat" id="longitud" placeholder="-59.138583" value="">
+							<input type="longitud" class="form-control lat" id="longitud" name="longitud" placeholder="-59.138583" value="" required>
 							<br>
 							<h5>Descripcion (opcional)</h5>
-							<textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+							<textarea class="form-control" id="descripcion" name="descripcion" rows="5"></textarea>
 							<br>
 							<h5>Adjuntar foto</h5>
-							<input type="file" name="imagen" value="imagen">
+							<input type="file" id="imagen" name="imagen" value="imagen" required />
 							<br>
 							<br>
 							<button type="submit" class="btn btn-primary mb-2">Submit</button>

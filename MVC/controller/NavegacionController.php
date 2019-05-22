@@ -2,36 +2,28 @@
 
 require_once "./view/NavegacionView.php";
 
-class NavegacionController
-{
+  class NavegacionController extends Controller{
 
-  private $NavegacionView;
-
-  function __construct()
-  {
-
-    $this->NavegacionView = new NavegacionView();
-  }
-
-  function home(){
-
-    $this->NavegacionView->Home();
-  }
-
-  function user(){
-    $this->NavegacionView->User();
-  }
-
-  function deposito(){
+    private $NavegacionView;
     
-    $this->NavegacionView->Deposito();
+    function __construct()
+    {
+      $this->NavegacionView = new NavegacionView();
+    }
+
+    function home(){
+      $this->NavegacionView->Home();
+    }
+
+    function user(){
+      $this->NavegacionView->User();
+    }
+
+    function register(){
+
+      $this->NavegacionView->Register();
+    }
+
   }
 
-  function register(){
-    
-    $this->NavegacionView->Register();
-  }
-
-}
-
- ?>
+?>

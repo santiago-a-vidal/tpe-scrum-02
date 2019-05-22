@@ -1,43 +1,34 @@
 <?php
 
 //Incluimos el archivo de configuracion
-require_once "config/ConfigApp.php";
-require_once "controller/NavegacionController.php";
+require_once 'config/Router.php';
+require_once 'config/db-config.php';
+require_once 'model/Model.php';
+require_once 'view/View.php';
+require_once 'controller/Controller.php';
+require_once 'controller/NavegacionController.php';
+require_once 'controller/RegistroController.php';
+require_once 'controller/ReporteController.php';
 
+$router = new Router();
 
-function parseURL($url)
+$router->AddRoute("", "GET", "NavegacionController", "Home");
+$router->AddRoute("home", "GET", "NavegacionController", "Home");
+$router->AddRoute("user", "GET", "NavegacionController", "User");
+$router->AddRoute("register", "GET", "NavegacionController", "Register");
+$router->AddRoute("registerUser", "POST", "RegistroController", "store");
+$router->AddRoute("userReport", "POST", "ReporteController", "store");
+
+$route = $_GET['action'];
+$array = $router->Route($route);
+if(sizeof($array) == 0)
+    echo (new NavegacionController())->home();
+else
 {
-  $urlExploded = explode('/', $url);
-  $arrayReturn[ConfigApp::$ACTION] = $urlExploded[0];
-
-  #borrar/1/2/3/4
-  $arrayReturn[ConfigApp::$PARAMS] = isset($urlExploded[1]) ? array_slice($urlExploded,1) : null;
-  return $arrayReturn;
+    $controller = $array[0];
+    $metodo = $array[1];
+    $url_params = $array[2];
+    echo (new $controller())->$metodo($url_params);
 }
-
-if(isset($_GET['action'])){
-   #$urlData[ACTION] = borrar
-   #$urlData[PARAMS] = [1,2,3,4]
-
-    $urlData = parseURL($_GET['action']);
-    $action = $urlData[ConfigApp::$ACTION]; //home
-    if(array_key_exists($action,ConfigApp::$ACTIONS)){
-        $params = $urlData[ConfigApp::$PARAMS];
-        $action = explode('#',ConfigApp::$ACTIONS[$action]); //Array[0] -> TareasController [1] -> BorrarTarea
-        $controller =  new $action[0]();
-        $metodo = $action[1];
-        if(isset($params) &&  $params != null){
-            echo $controller->$metodo($params);
-        }
-        else{
-            echo $controller->$metodo();
-        }
-    }else{
-      // $controller =  new NavegacionController();
-      // $controller->Home();
-      header(HOME);
-    }
-}
-
 
  ?>

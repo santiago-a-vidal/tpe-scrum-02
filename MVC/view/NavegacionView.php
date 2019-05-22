@@ -1,16 +1,6 @@
 <?php
 
-include_once "./libs/smarty.class.php";
-
-class NavegacionView
-{
-
-  private $smarty;
-
-  function __construct()
-  {
-    $this->smarty = new Smarty();
-  }
+class NavegacionView extends View {
 
   function Home(){
     $this->smarty->display('templates/home.tpl');
@@ -23,6 +13,18 @@ class NavegacionView
   function Register(){
     $this->smarty->display('templates/register.tpl');
   }
+
+  function errorFormRegistro($error = '')
+    {
+      $this->smarty->assign('error', $error);
+      return $this->smarty->display('templates/register.tpl');
+    }
+
+  function errorFormReporte($error = '')
+    {
+      $this->smarty->assign('error', $error);
+      return $this->smarty->display('templates/user.tpl');
+    }
 
 }
 

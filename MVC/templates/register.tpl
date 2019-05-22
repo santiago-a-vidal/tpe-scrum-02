@@ -4,26 +4,28 @@
 
 	<div class="container">
 
-			<div class="row"> 
+			<div class="row">
 					<div class="col">
 						<div id="map" class="" style="width: 550px; height: 550px; background: grey"></div>
 					</div>
 					<div class="col mt-3">
-			
+						{if !empty($error) }
+		         <div class="alert alert-danger" role="alert">{$error}</div>
+						{/if}
             <div class="mb-3">
                 <h3>Registro</h3>
             </div>
             <div class="">
-                <form>
+                <form action="registerUser" method="post">
                     <div class="form-group">
-                        <label for="InputName">Username</label>
-                        <input type="text" class="form-control" id="InputName" aria-describedby="emailHelp" placeholder="Enter username">
+                        <label for="InputName">Usuario</label>
+                        <input type="email" class="form-control" id="email" name ="usuario" aria-describedby="emailHelp" placeholder="" required>
                     </div>
                     <div class="form-group">
                         <label for="InputPassword">Password</label>
-                        <input type="password" class="form-control" id="InputPassword" placeholder="Enter Password">
+                        <input type="password" class="form-control" id="password" name ="password" placeholder="******" required>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-dark">Submit</button>
+                    <button type="submit" id="btn-registro" class="btn btn-primary btn-dark">Submit</button>
                 </form>
             </div>
 

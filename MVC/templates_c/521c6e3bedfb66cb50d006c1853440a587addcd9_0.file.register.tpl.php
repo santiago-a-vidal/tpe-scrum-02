@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-05-23 16:41:39
+/* Smarty version 3.1.33, created on 2019-05-23 17:27:19
   from 'C:\xampp\htdocs\Trabajo Metodologia\MVC\templates\register.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ce6b12366e130_62260580',
+  'unifunc' => 'content_5ce6bbd7881554_83980974',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '521c6e3bedfb66cb50d006c1853440a587addcd9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Trabajo Metodologia\\MVC\\templates\\register.tpl',
-      1 => 1558622497,
+      1 => 1558623264,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:nav.tpl' => 1,
   ),
 ),false)) {
-function content_5ce6b12366e130_62260580 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ce6bbd7881554_83980974 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -53,7 +53,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                         <label for="InputPassword">Password</label>
                         <input type="password" class="form-control" id="password" name ="password" placeholder="password123" required>
                     </div>
-                    <button type="submit" id="btn-registro" class="btn btn-primary btn-dark">Enviar</button>
+                    <button type="submit" id="btn-registro" class="btn btn-primary btn-dark">Registrarse</button>
                 </form>
             </div>
 

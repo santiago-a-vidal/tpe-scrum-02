@@ -1,43 +1,45 @@
--- --------------------------------------------------------
+-- phpMyAdmin SQL Dump
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
 --
--- Database: `db_tandil_basura`
---
--- --------------------------------------------------------
+-- Host: 127.0.0.1
+-- Generation Time: May 23, 2019 at 05:07 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
--- tables
--- Table: reporte
-CREATE TABLE reporte (
-    id_reporte serial  NOT NULL,
-    id_usuario int  NOT NULL,
-    latitud real  NOT NULL,
-    longitud real  NOT NULL,
-    foto varchar(60)  NOT NULL,
-    descripcion varchar(120)  NOT NULL,
-    CONSTRAINT pk_reporte PRIMARY KEY (id_reporte,id_usuario)
-);
 
--- Table: usuario
-CREATE TABLE usuario (
-    id_usuario serial  NOT NULL,
-    nombre varchar(30)  NOT NULL,
-    password varchar(90)  NOT NULL,
-    admin boolean  NOT NULL,
-    CONSTRAINT pk_usuario PRIMARY KEY (id_usuario)
-);
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
--- foreign keys
--- Reference: fk_usuario_reporte (table: reporte)
-ALTER TABLE reporte ADD CONSTRAINT fk_usuario_reporte
-    FOREIGN KEY (id_usuario)
-    REFERENCES usuario (id_usuario)
-    NOT DEFERRABLE
-    INITIALLY IMMEDIATE
-;
+--
+-- Database: `db_tandil_basura`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reporte`
+--
+
+CREATE TABLE `reporte` (
+  `id_reporte` bigint(20) UNSIGNED NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `latitud` double NOT NULL,
+  `longitud` double NOT NULL,
+  `foto` varchar(60) NOT NULL,
+  `descripcion` varchar(120) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reporte`
+--
 
 INSERT INTO `reporte` (`id_reporte`, `id_usuario`, `latitud`, `longitud`, `foto`, `descripcion`) VALUES
 (1, 3, -37.315, -59.1457, 'images/5ce6b449cd5fb.jpg', ''),
@@ -58,6 +60,23 @@ INSERT INTO `reporte` (`id_reporte`, `id_usuario`, `latitud`, `longitud`, `foto`
 (16, 4, -37.3155, -59.1305, 'images/5ce6b59d46030.jpg', ''),
 (17, 7, -37.3202, -59.1429, 'images/5ce6b5bbd22c9.jpg', 'Un monton, limpien ya');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id_usuario` bigint(20) UNSIGNED NOT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `password` varchar(90) NOT NULL,
+  `admin` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `usuario`
+--
+
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `password`, `admin`) VALUES
 (3, 'nicky_jam@gmail.com', '$2y$10$/4YQXzUkhM8J4Scxi44EIeeFmFCKeKuh4.rxP1NJta1X6Snt.HdRS', 1),
 (4, 'juancodigo@hotmail.com', '$2y$10$HR6IWfyIWykKJ8NpPY.PBOGWNG2aKn2PCZFdo5tYLz7uBZ0RME9j2', 0),
@@ -66,4 +85,41 @@ INSERT INTO `usuario` (`id_usuario`, `nombre`, `password`, `admin`) VALUES
 (7, 'yenimotoquera@gmail.com', '$2y$10$QDqgQQcqHd6dyI0ktG9WYeJZJwEidYaXE88ZINA6sbLGoE0FJMvfO', 0),
 (8, 'heroadolfo@hotmail.com', '$2y$10$Dibz3519aqTQdJF.guclD.ovex.LILH/yDc9.KNzFnZ6RW/OSm6Ei', 1);
 
--- End of file.
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `reporte`
+--
+ALTER TABLE `reporte`
+  ADD PRIMARY KEY (`id_reporte`,`id_usuario`),
+  ADD UNIQUE KEY `id_reporte` (`id_reporte`);
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD UNIQUE KEY `id_usuario` (`id_usuario`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `reporte`
+--
+ALTER TABLE `reporte`
+  MODIFY `id_reporte` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id_usuario` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

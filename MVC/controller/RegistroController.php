@@ -11,12 +11,13 @@ class RegistroController extends Controller{
       $this->model = new RegistroModel();
     }
 
+  //Guardar la informacion de usuario y contraseña
   public function store(){
     try
       {
         $this->excepcionesIssetRegistro();
           try
-            { //verificacion de longitud de contraseña y que un mismo usuario no se registre dos veces
+            { //Verificacion de longitud de contraseña y que un mismo usuario no se registre dos veces
               if (strlen($_POST['password'])<6)
                 throw new Exception("La contraseña debe tener mas de 6 caracteres");
               $usuario = $this->model->getUsuario($_POST['usuario']);
@@ -38,6 +39,8 @@ class RegistroController extends Controller{
         }
   }
 
+
+//Caso en los que no se ingresan datos de usuario o contraseña en el formulario
   private function excepcionesIssetRegistro()
     {
       if (!isset($_POST['usuario']))

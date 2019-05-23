@@ -30,7 +30,7 @@
 							<input type="file" id="imagen" name="imagen" value="imagen" required />
 							<br>
 							<br>
-							<button type="submit" class="btn btn-primary mb-2">Submit</button>
+							<button type="submit" class="btn btn-primary mb-2">Enviar</button>
 						</form>
 					</div>
 				</div>

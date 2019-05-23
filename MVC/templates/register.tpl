@@ -19,13 +19,13 @@
                 <form action="registerUser" method="post">
                     <div class="form-group">
                         <label for="InputName">Usuario</label>
-                        <input type="email" class="form-control" id="email" name ="usuario" placerholder="usuario" aria-describedby="emailHelp" placeholder="" required>
+                        <input type="email" class="form-control" id="email" name ="usuario" placeholder="usuario@ejemplo.com" aria-describedby="emailHelp" placeholder="" required>
                     </div>
                     <div class="form-group">
                         <label for="InputPassword">Password</label>
-                        <input type="password" class="form-control" id="password" name ="password" placeholder="ejemplo123" required>
+                        <input type="password" class="form-control" id="password" name ="password" placeholder="password123" required>
                     </div>
-                    <button type="submit" id="btn-registro" class="btn btn-primary btn-dark">Enviar</button>
+                    <button type="submit" id="btn-registro" class="btn btn-primary btn-dark">Registrarse</button>
                 </form>
             </div>
 

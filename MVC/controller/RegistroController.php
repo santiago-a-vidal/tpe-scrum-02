@@ -16,7 +16,7 @@ class RegistroController extends Controller{
       {
         $this->excepcionesIssetRegistro();
           try
-            {
+            { //verificacion de longitud de contraseña y que un mismo usuario no se registre dos veces
               if (strlen($_POST['password'])<6)
                 throw new Exception("La contraseña debe tener mas de 6 caracteres");
               $usuario = $this->model->getUsuario($_POST['usuario']);

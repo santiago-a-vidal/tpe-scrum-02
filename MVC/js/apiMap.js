@@ -39,7 +39,7 @@ function addInfoBubble(map) {
         let latitud = document.getElementsByClassName('latitud');
         let foto = document.getElementsByClassName('foto');
         let descripcion= document.getElementsByClassName('descripcion');
-
+        //iteramos los reportes y los agregamos al mapa
         for(let i = 0; i < longitud.length; i++){
 
             addMarkerToGroup(group, {lat: latitud[i].innerHTML, lng: longitud[i].innerHTML},

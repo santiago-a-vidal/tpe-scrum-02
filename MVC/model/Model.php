@@ -9,7 +9,7 @@
 
         {
           try
-            {
+            { //le decimos al model que cuando se instancie le pegue a mysql
               $this->db = new PDO('mysql:host='.DB_HOST.';'
               .'dbname='.DB_NAME.';charset=utf8'
               , DB_USER, DB_PASSWORD);

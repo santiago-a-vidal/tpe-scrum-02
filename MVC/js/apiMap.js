@@ -5,6 +5,7 @@
     html : info asociada
  */
 
+
 function addMarkerToGroup(group, coordinate, html) {
     let marker = new H.map.Marker(coordinate);
   // agrega datos del marker   // add custom data to the marker
@@ -33,29 +34,19 @@ function addInfoBubble(map) {
 //  muestra la info
     ui.addBubble(bubble);
     }, false);
-    addMarkerToGroup(group, {lat:-37.318796, lng:-59.138583},
-        '<div><a href=>Montevideo y 9 de julio</a>' +
-        '</div><div >Basura<br>Cantidad: Baja</div>');
 
-    addMarkerToGroup(group, {lat:-37.325354, lng: -59.136346},
-        '<div ><a href=>Sarmiento y 9 de julio</a>' +
-        '</div><div >Basura<br>Cantidad: Baja</div>');
+        let longitud = document.getElementsByClassName('longitud');
+        let latitud = document.getElementsByClassName('latitud');
+        let foto = document.getElementsByClassName('foto');
+        let descripcion= document.getElementsByClassName('descripcion');
 
-    addMarkerToGroup(group, {lat: -37.325986, lng: -59.147128},
-        '<div ><a href=>Av. Peron y Av. Espania</a>' +
-        '</div><div >Basura<br>Cantidad: Media</div>');
+        for(let i = 0; i < longitud.length; i++){
 
-    addMarkerToGroup(group, {lat: -37.311726, lng: -59.128931},
-        '<div ><a href=>Uriburu y Montiel</a>' +
-        '</div><div >Basura<br>Cantidad: Media</div>');
+            addMarkerToGroup(group, {lat: latitud[i].innerHTML, lng: longitud[i].innerHTML},
+                '<div class="infoReporte"><div><a> <img class="reporte" src="'+foto[i].innerHTML+'"></a>' +
+                '</div><div> '+descripcion[i].innerHTML+'</div></div>');
 
-    addMarkerToGroup(group, {lat: -37.321976, lng: -59.121555},
-        '<div ><a href=>Pinto y Moreno</a>' +
-        '</div><div >Basura<br>Cantidad: Alta</div>');
-
-    addMarkerToGroup(group, {lat: -37.330662, lng: -59.128889},
-        '<div ><a href=>Constitucion y Paz</a>' +
-        '</div><div >Basura<br>Cantidad: Alta</div>');
+        }
 
 }
 

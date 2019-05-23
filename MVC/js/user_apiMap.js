@@ -37,11 +37,11 @@ function setUpClickListener(map) {
     map.addEventListener('tap', function (evt) {
       var coord = map.screenToGeo(evt.currentPointer.viewportX,
               evt.currentPointer.viewportY);
-      
+
       let x = document.getElementsByClassName('lat');
       addMarkersToMap(map, {lat:-(Math.abs(coord.lat.toFixed(4))), lng:-(Math.abs(coord.lng.toFixed(4)))});
-      x[0].value = Math.abs(coord.lat.toFixed(4));
-      x[1].value = Math.abs(coord.lng.toFixed(4));
+      x[0].value = -Math.abs(coord.lat.toFixed(4));
+      x[1].value = -Math.abs(coord.lng.toFixed(4));
     });
   }
 

@@ -26,6 +26,11 @@ class NavegacionView extends View {
       return $this->smarty->display('templates/user.tpl');
     }
 
+    function mapaAdmin($reportes){
+      $this->smarty->assign('reportes', $reportes);
+      $this->smarty->display('templates/mapaAdmin.tpl');
+    }
+
 }
 
  ?>

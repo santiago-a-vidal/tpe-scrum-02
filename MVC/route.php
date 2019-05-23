@@ -14,10 +14,11 @@ $router = new Router();
 
 $router->AddRoute("", "GET", "NavegacionController", "Home");
 $router->AddRoute("home", "GET", "NavegacionController", "Home");
-$router->AddRoute("user", "GET", "NavegacionController", "User");
+$router->AddRoute("reportar", "GET", "NavegacionController", "User");
 $router->AddRoute("register", "GET", "NavegacionController", "Register");
 $router->AddRoute("registerUser", "POST", "RegistroController", "store");
 $router->AddRoute("userReport", "POST", "ReporteController", "store");
+$router->AddRoute("mapaAdmin", "GET", "NavegacionController", "mapaAdmin");
 
 $route = $_GET['action'];
 $array = $router->Route($route);

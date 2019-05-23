@@ -20,7 +20,6 @@ require_once('view/NavegacionView.php');
           $id_usuario=$this->modelUsuario->getUsuarioID($_POST['usuario']);
           if (!$id_usuario)
               throw new Exception("Usuario no registrado");
-          print_r($id_usuario);
           $this->model->storeReporte($id_usuario['id_usuario'],$_POST['latitud'],$_POST['longitud'],$imagen,$_POST['descripcion']);
           header('Location: '.HOME);
         }
@@ -29,5 +28,6 @@ require_once('view/NavegacionView.php');
             $this->view->errorFormReporte($e->getMessage());
           }
       }
+
   }
 ?>

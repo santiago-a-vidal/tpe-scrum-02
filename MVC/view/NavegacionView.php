@@ -2,6 +2,10 @@
 
 class NavegacionView extends View {
 
+  function Login(){
+    $this->smarty->display('templates/login.tpl');
+  }
+
   function Home(){
     $this->smarty->display('templates/home.tpl');
   }
@@ -10,14 +14,14 @@ class NavegacionView extends View {
     $this->smarty->display('templates/user.tpl');
   }
 
-  function Register(){
-    $this->smarty->display('templates/register.tpl');
-  }
+  // function Register(){
+  //   $this->smarty->display('templates/register.tpl');
+  // }
 
   function errorFormRegistro($error = '')
     {
       $this->smarty->assign('error', $error);
-      return $this->smarty->display('templates/register.tpl');
+      return $this->smarty->display('templates/login.tpl');
     }
 
   function errorFormReporte($error = '')

@@ -9,7 +9,7 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
                   <a class="nav-item nav-link active" href="home"><i class="fas fa-home"></i> Home</a>
-                  <a class="nav-item nav-link active" href="register"><i class="fas fa-home"></i> Registrarse</a>
+                  <!-- <a class="nav-item nav-link active" href="register"><i class="fas fa-home"></i> Registrarse</a> -->
                   <a class="nav-item nav-link active" href="reportar"><i class="fas fa-home"></i> Reportar basura</a>
                   <a class="nav-item nav-link active" href="mapa"><i class="fas fa-home"></i> Mapa usuario</a>
                   <a class="nav-item nav-link active" href="mapaAdmin"><i class="fas fa-home"></i> Mapa cuadrilla</a>

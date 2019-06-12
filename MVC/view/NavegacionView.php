@@ -10,15 +10,25 @@ class NavegacionView extends View {
     $this->smarty->display('templates/home.tpl');
   }
 
+    function HomeAdmin(){
+    $this->smarty->display('templates/homeAdmin.tpl');
+  }
+
   function User(){
     $this->smarty->display('templates/user.tpl');
   }
 
-  // function Register(){
-  //   $this->smarty->display('templates/register.tpl');
-  // }
+  function Register(){
+     $this->smarty->display('templates/register.tpl');
+  }
 
   function errorFormRegistro($error = '')
+    {
+      $this->smarty->assign('error', $error);
+      return $this->smarty->display('templates/register.tpl');
+    }
+
+  function errorFormLogin($error = '')
     {
       $this->smarty->assign('error', $error);
       return $this->smarty->display('templates/login.tpl');

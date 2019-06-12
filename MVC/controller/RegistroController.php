@@ -11,8 +11,33 @@ class RegistroController extends Controller{
       $this->model = new RegistroModel();
     }
 
+
+	public function VerificarLogin()
+	  {
+		if(null !== ($_POST['usuario']) && null !== ($_POST['password'])){
+		  $email = $_POST['usuario'];
+		  $password = $_POST['password'];
+		  $dbUsuario = $this->model->getUsuario($email);
+		  if(!empty($dbUsuario)){
+			if(password_verify($password, $dbUsuario[0]['password'])){
+				if($dbUsuario[0]['admin']){
+					$this->view->HomeAdmin();
+				}else{
+					$this->view->Home();
+				}
+			}else{
+			  $this->view->errorFormLogin("Contraseña Incorrecta.");
+			}
+		  }else{
+			$this->view->errorFormLogin("Usuario Incorrecto.");
+		  }
+		}else{
+		  $this->view->errorFormLogin("Debe Ingresarse Primero.");
+		}
+	  }
+
   //Guardar la informacion de usuario y contraseña
-  public function store(){
+  public function VerificarRegistro(){
     try
       {
         $this->excepcionesIssetRegistro();

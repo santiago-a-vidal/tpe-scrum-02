@@ -15,24 +15,27 @@ require_once "./model/ReporteModel.php";
     }
 
 //Cuando en el route no hay parametros entra en esta funcion que pide login
-    function login(){
+    function Login(){
       $this->NavegacionView->Login();
     }
 
-    function home(){
+    function Home(){
       $this->NavegacionView->Home();
     }
 
-    function user(){
-      $this->NavegacionView->User();
+	    function HomeAdmin(){
+      $this->NavegacionView->HomeAdmin();
     }
 
-    // function register(){
-    //
-    //   $this->NavegacionView->Register();
-    // }
+    function User(){
+		$this->NavegacionView->User();
+    }
 
-    function mapaAdmin(){
+    function Registro(){
+		$this->NavegacionView->Register();
+	}
+
+    function MapaAdmin(){
       $reportes = $this->ReporteModel->getAllReportes();
       $this->NavegacionView->mapaAdmin($reportes);
     }

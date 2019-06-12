@@ -16,7 +16,7 @@
                 <h3>Iniciar sesion</h3>
             </div>
             <div class="">
-                <form action="registerUser" method="post">
+                <form action="loginuser" method="post">
                     <div class="form-group">
                         <label for="InputName">Usuario</label>
                         <input type="email" class="form-control" id="email" name ="usuario" placeholder="usuario@ejemplo.com" aria-describedby="emailHelp" placeholder="" required>
@@ -26,8 +26,11 @@
                         <input type="password" class="form-control" id="password" name ="password" placeholder="password123" required>
                     </div>
                     <button type="submit" id="btn-login" class="btn btn-primary btn-dark">Ingresar</button>
-                    <button type="submit" id="btn-registro" class="btn btn-primary btn-dark">Registrar usuario</button>
+                    
                 </form>
+				<form action="register" method="get">
+					<button type="submit" id="btn-registro" class="btn btn-primary btn-dark">Registrar usuario</button>
+				</form>
             </div>
 
 					</div>

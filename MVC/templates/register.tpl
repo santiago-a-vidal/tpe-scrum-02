@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-{include file="nav.tpl"}
+{include file="navLogin.tpl"}
 
 	<div class="container">
 
@@ -16,7 +16,7 @@
                 <h3>Registro</h3>
             </div>
             <div class="">
-                <form action="registerUser" method="post">
+                <form action="registeruser" method="post">
                     <div class="form-group">
                         <label for="InputName">Usuario</label>
                         <input type="email" class="form-control" id="email" name ="usuario" placeholder="usuario@ejemplo.com" aria-describedby="emailHelp" placeholder="" required>

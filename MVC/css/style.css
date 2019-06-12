@@ -11,3 +11,15 @@
   padding: 10%;
   background-color: rgba(255, 255, 255, 0.5);
 }
+
+.container-fluid {
+    display:inline-block;
+}
+
+.imagen1 {
+    padding-left: 10%;
+}
+
+.imagen2 {
+    padding-top:10%;
+}

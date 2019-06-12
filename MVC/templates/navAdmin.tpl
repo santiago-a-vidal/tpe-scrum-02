@@ -8,8 +8,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
-                  <a class="nav-item nav-link active" href="home"><i class="fas fa-home"></i> Home</a>
-                  <a class="nav-item nav-link active" href="reportar"><i class="fas fa-home"></i> Reportar basura</a>
+				<h4 class="text-success">Cuenta Cuadrilla</h4>
+                <a class="nav-item nav-link active" href="homeadmin"><i class="fas fa-home"></i> Home</a>
+                <a class="nav-item nav-link active" href="mapaadmin"><i class="fas fa-home"></i> Mapa cuadrilla</a>
               </div>
           </div>
       </div>

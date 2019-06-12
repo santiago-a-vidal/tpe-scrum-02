@@ -13,12 +13,14 @@ require_once 'controller/ReporteController.php';
 $router = new Router();
 
 $router->AddRoute("", "GET", "NavegacionController", "Login");
+$router->AddRoute("login", "GET", "NavegacionController", "Login");
 $router->AddRoute("home", "GET", "NavegacionController", "Home");
+$router->AddRoute("homeadmin", "GET", "NavegacionController", "HomeAdmin");
 $router->AddRoute("reportar", "GET", "NavegacionController", "User");
-// $router->AddRoute("register", "GET", "NavegacionController", "Register");
-// $router->AddRoute("registerUser", "POST", "RegistroController", "store");
-// $router->AddRoute("userReport", "POST", "ReporteController", "store");
-$router->AddRoute("mapaAdmin", "GET", "NavegacionController", "mapaAdmin");
+$router->AddRoute("mapaadmin", "GET", "NavegacionController", "MapaAdmin");
+$router->AddRoute("register", "GET", "NavegacionController", "Registro");
+$router->AddRoute("registeruser", "POST", "RegistroController", "VerificarRegistro");
+$router->AddRoute("loginuser", "POST", "RegistroController", "verificarLogin");
 
 $route = $_GET['action'];
 $array = $router->Route($route);

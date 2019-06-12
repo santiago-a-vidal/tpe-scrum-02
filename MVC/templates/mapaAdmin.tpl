@@ -1,5 +1,5 @@
 {include file="header.tpl" }
-{include file="nav.tpl"}
+{include file="navAdmin.tpl"}
     <table hidden="hidden">
 {foreach from=$reportes item=reporte}
         <tr>

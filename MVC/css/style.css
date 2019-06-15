@@ -23,3 +23,55 @@
 .imagen2 {
     padding-top:10%;
 }
+
+.tick {
+    height: 20px !important;
+    width: 20px !important;
+}
+
+th{
+    text-align: center;
+}
+
+.centrarfila {
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+/**/
+
+.bordeArribaNews h1{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2em;
+}
+
+.bordeArribaNews{
+    background-color: #cc1a25;
+}
+
+.bordeArribaNews{
+    margin-top: 3%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+    .bordeArribaNews h1{
+        padding: 1%;
+        color: white;
+        margin-left: 2%;
+    }
+
+.bordeArribaNews {
+    height: 40px;
+}
+
+.bordeArribaNews {
+    margin-bottom: 1%;
+}
+
+    .bordeArribaNews h1{
+        margin-top: 20%;
+        padding: 2%;
+        font-size: 2em;
+    }

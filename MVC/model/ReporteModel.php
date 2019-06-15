@@ -28,7 +28,7 @@ class ReporteModel extends Model {
 
   function getAllReportes(){
     //traemos todos los reportes sin id de usuario ni id de reporte
-    $sentencia=$this->db->prepare("SELECT latitud, longitud, foto, descripcion FROM reporte");
+    $sentencia=$this->db->prepare("SELECT * FROM reporte");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }

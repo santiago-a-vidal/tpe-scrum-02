@@ -19,10 +19,6 @@ require_once "./model/ReporteModel.php";
       $this->NavegacionView->Login();
     }
 
-    function Home(){
-      $this->NavegacionView->Home();
-    }
-
 	    function HomeAdmin(){
       $this->NavegacionView->HomeAdmin();
     }

@@ -9,3 +9,9 @@
 <title>Basura Tandil</title>
 </head>
 <body>
+
+{if (isset($smarty.session.user))}
+
+{include file="navUsuario.tpl"}
+
+{/if}

@@ -9,23 +9,26 @@ require_once 'controller/Controller.php';
 require_once 'controller/NavegacionController.php';
 require_once 'controller/RegistroController.php';
 require_once 'controller/ReporteController.php';
+require_once 'controller/UsuarioController.php';
 
 $router = new Router();
 
 $router->AddRoute("", "GET", "NavegacionController", "Login");
 $router->AddRoute("login", "GET", "NavegacionController", "Login");
-$router->AddRoute("home", "GET", "NavegacionController", "Home");
+$router->AddRoute("home", "GET", "UsuarioController", "Home");
 $router->AddRoute("homeadmin", "GET", "NavegacionController", "HomeAdmin");
 $router->AddRoute("reportar", "GET", "NavegacionController", "User");
 $router->AddRoute("mapaadmin", "GET", "NavegacionController", "MapaAdmin");
 $router->AddRoute("register", "GET", "NavegacionController", "Registro");
 $router->AddRoute("registeruser", "POST", "RegistroController", "VerificarRegistro");
 $router->AddRoute("loginuser", "POST", "RegistroController", "verificarLogin");
+$router->AddRoute("logout", "GET", "UsuarioController", "logout");
 
 $route = $_GET['action'];
 $array = $router->Route($route);
 if(sizeof($array) == 0)
-    echo (new NavegacionController())->login();
+    // echo (new NavegacionController())->login();
+    header('Location: ' .LOGIN);
 else
 {
     $controller = $array[0];

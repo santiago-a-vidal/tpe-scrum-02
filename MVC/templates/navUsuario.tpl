@@ -9,7 +9,7 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
                   <a class="nav-item nav-link active" href="home"><i class="fas fa-home"></i> Home</a>
-                  <a class="nav-item nav-link active" href="reportes"><i class="fas fa-home"></i> Mis reportes</a>
+                  <a class="nav-item nav-link active" href="misReportes"><i class="fas fa-home"></i> Mis reportes</a>
                   <a class="nav-item nav-link active" href="reportar"><i class="fas fa-home"></i> Reportar basura</a>
                   <a class="nav-item nav-link active" href="logout"><i class="fas fa-home"></i> Salir</a>
               </div>

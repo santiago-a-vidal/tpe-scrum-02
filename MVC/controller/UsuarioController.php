@@ -6,11 +6,13 @@ require_once "./view/NavegacionView.php";
 class UsuarioController extends SecuredController{
 
     private $NavegacionView;
+    private $ReporteModel;
 
     function __construct()
     {
        parent::__construct();
        $this->NavegacionView = new NavegacionView();
+       $this->ReporteModel = new ReporteModel();
     }
 
     function Home($codigo_reporte = ''){
@@ -20,6 +22,14 @@ class UsuarioController extends SecuredController{
 /*        }else{
           header('Location: ' .LOGIN);
         }*/
+      }
+
+      function misReportes(){
+
+        $id_usuario = $_SESSION['idUsuario'];
+        $reportes = $this->ReporteModel->getAllReportesUsuario($id_usuario);
+
+        $this->NavegacionView->misReportes($reportes);
       }
 
 }

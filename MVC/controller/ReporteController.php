@@ -31,5 +31,12 @@ require_once('UsuarioController.php');
           }
       }
 
+      public function BorrarReporte(){
+        $id_reporte = $_POST['id_reporte'];
+        $this->model->borrarReporte($id_reporte);
+        header('Location: '. MAPAADMIN);
+      
+      }
+
   }
 ?>

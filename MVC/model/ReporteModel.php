@@ -33,6 +33,12 @@ class ReporteModel extends Model {
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function borrarReporte($idReporte){
+
+    $sentencia=$this->db->prepare("DELETE FROM reporte WHERE id_reporte=?");
+    $sentencia->execute([$idReporte]);
+  }
+
   function subirImagen($imagen){
     //esta funcion traduce la ruta absoluta de la imagen a relativa
    $destino_final = 'images/' . uniqid() . '.jpg';

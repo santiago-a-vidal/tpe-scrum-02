@@ -27,7 +27,12 @@
 			<td class="longitud">{$reporte['longitud']}</td>
             <td hidden="hidden" class="foto">{$reporte['foto']}</td>
 			<td class="descripcion">{$reporte['descripcion']}</td>
-			<td><button type="button" class="btn btn-success"><img class="tick" src="images/tick.ico"></button></td>
+			<td>
+        <form action="borrarreporte" method="post">
+          <input hidden="hidden" value="{$reporte['id_reporte']}" name="id_reporte">
+          <button type="submit" class="btn btn-success"><img class="tick" src="images/tick.ico"></button>
+        </form>
+      </td>
         </tr>
 {/foreach}
 	</tbody>

@@ -25,6 +25,7 @@ $router->AddRoute("loginuser", "POST", "RegistroController", "verificarLogin");
 $router->AddRoute("logout", "GET", "UsuarioController", "logout");
 $router->AddRoute("enviarreporte", "POST", "ReporteController", "EnviarReporte");
 $router->AddRoute("misReportes", "GET", "UsuarioController", "misReportes");
+$router->AddRoute("borrarreporte", "POST", "ReporteController", "BorrarReporte");
 
 $route = $_GET['action'];
 $array = $router->Route($route);

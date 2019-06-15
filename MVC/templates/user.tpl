@@ -1,7 +1,5 @@
 {include file="header.tpl"}
 
-{include file="nav.tpl"}
-
 	<div class="container">
 
 		<div class="row">
@@ -10,7 +8,7 @@
 				</div>
 				<div class="col">
 					<div class="" style="max-width:600px;padding:7px 20px;background:#ebeff2">
-						<form class="form-horizontal control-label col-sm" role="form" action="userReport" method="post" enctype="multipart/form-data">
+						<form class="form-horizontal control-label col-sm" role="form" action="enviarreporte" method="post" enctype="multipart/form-data">
 							<h3>Reporte</h3>
 							{if !empty($error) }
 							 <div class="alert alert-danger" role="alert">{$error}</div>

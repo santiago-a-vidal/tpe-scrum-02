@@ -6,3 +6,4 @@
 	  <image class="imagen2" src="images/cuadrilla.jpg">
 	</div>
   </div>
+  {$codigo_reporte}

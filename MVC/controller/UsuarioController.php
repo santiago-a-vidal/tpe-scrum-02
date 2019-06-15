@@ -13,14 +13,13 @@ class UsuarioController extends SecuredController{
        $this->NavegacionView = new NavegacionView();
     }
 
-    function Home(){
-
-        if(!empty($_SESSION['user'])){
-            $this->NavegacionView->Home();
-        }else{
-            header('Location: ' .LOGIN);
-        }
-    
+    function Home($codigo_reporte = ''){
+/*		session_start();
+        if(!empty($_SESSION['user'])){*/
+            $this->NavegacionView->Home($codigo_reporte);
+/*        }else{
+          header('Location: ' .LOGIN);
+        }*/
       }
 
 }

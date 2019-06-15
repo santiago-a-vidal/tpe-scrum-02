@@ -6,9 +6,11 @@ class NavegacionView extends View {
     $this->smarty->display('templates/login.tpl');
   }
 
-  function Home(){
+  function Home($codigo_reporte = ''){
+    $this->smarty->assign('codigo_reporte', $codigo_reporte);
     $this->smarty->display('templates/home.tpl');
   }
+
 
     function HomeAdmin(){
     $this->smarty->display('templates/homeAdmin.tpl');

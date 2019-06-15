@@ -20,18 +20,14 @@ class RegistroController extends Controller{
 		  $dbUsuario = $this->model->getUsuario($email);
 		  if(!empty($dbUsuario)){
 				if(password_verify($password, $dbUsuario['password'])){
+				    session_start();
+					$_SESSION['user'] = $dbUsuario['nombre'];
+					$_SESSION['admin'] = $dbUsuario['admin'];
+					$_SESSION['idUsuario'] = $dbUsuario['id_usuario'];
 					if($dbUsuario['admin'] == 1){
-            session_start();
-            $_SESSION['user'] = $dbUsuario['nombre'];
-            $_SESSION['admin'] = $dbUsuario['admin'];
-            $_SESSION['idUsuario'] = $dbUsuario['id_usuario'];
 						$this->view->HomeAdmin();
 					}else{
-            session_start();
-            $_SESSION['user'] = $dbUsuario['nombre'];
-            $_SESSION['admin'] = $dbUsuario['admin'];
-            $_SESSION['idUsuario'] = $dbUsuario['id_usuario'];
-            header('Location: '.HOME);
+						$this->view->Home();
 					}
 				}else{
 					$this->view->errorFormLogin("Contraseña Incorrecta.");

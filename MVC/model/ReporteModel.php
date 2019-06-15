@@ -42,12 +42,12 @@ class ReporteModel extends Model {
  }
 
  //Función para traer el último reporte realizado
- function lastIdReporte(){
+   function lastInsertId(){
+    //traemos todos los reportes sin id de usuario ni id de reporte
+    $sentencia=$this->db->lastInsertId();
+    return $sentencia;
+  }
 
-  $sentencia = $this->db->prepare("SELECT id_reporte FROM reporte ORDER BY id_reporte DESC LIMIT 1");
-  $sentencia->execute();
-  return $sentencia->fetch(PDO::FETCH_ASSOC);
- }
 
 }
 ?>

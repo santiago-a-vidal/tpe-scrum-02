@@ -23,6 +23,7 @@ $router->AddRoute("register", "GET", "NavegacionController", "Registro");
 $router->AddRoute("registeruser", "POST", "RegistroController", "VerificarRegistro");
 $router->AddRoute("loginuser", "POST", "RegistroController", "verificarLogin");
 $router->AddRoute("logout", "GET", "UsuarioController", "logout");
+$router->AddRoute("enviarreporte", "POST", "ReporteController", "EnviarReporte");
 
 $route = $_GET['action'];
 $array = $router->Route($route);

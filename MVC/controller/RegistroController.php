@@ -19,15 +19,15 @@ class RegistroController extends Controller{
 		  $password = $_POST['password'];
 		  $dbUsuario = $this->model->getUsuario($email);
 		  if(!empty($dbUsuario)){
-			if(password_verify($password, $dbUsuario[0]['password'])){
-				if($dbUsuario[0]['admin']){
-					$this->view->HomeAdmin();
+				if(password_verify($password, $dbUsuario['password'])){
+					if($dbUsuario['admin'] == 1){
+						$this->view->HomeAdmin();
+					}else{
+						$this->view->Home();
+					}
 				}else{
-					$this->view->Home();
+					$this->view->errorFormLogin("Contraseña Incorrecta.");
 				}
-			}else{
-			  $this->view->errorFormLogin("Contraseña Incorrecta.");
-			}
 		  }else{
 			$this->view->errorFormLogin("Usuario Incorrecto.");
 		  }

@@ -4,7 +4,7 @@
 
 	<div class="container">
 
-			<div class="row">
+		    <div class="row">
 					<div class="col">
 						<div id="map" class="" style="width: 550px; height: 550px; background: grey"></div>
 					</div>
@@ -18,21 +18,33 @@
             <div class="">
                 <form action="registeruser" method="post">
                     <div class="form-group">
-                        <label for="InputName">Usuario</label>
-                        <input type="email" class="form-control" id="email" name ="usuario" placeholder="usuario@ejemplo.com" aria-describedby="emailHelp" placeholder="" required>
+                        <label for="InputMail">Email</label>
+                        <input type="text" class="form-control" id="mail" name ="mail" placeholder="usuario@ejemplo.com" aria-describedby="mailHelp" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputNombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name ="nombre" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputApellido">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" name ="apellido" placeholder="Apellido" required>
                     </div>
                     <div class="form-group">
                         <label for="InputPassword">Password</label>
-                        <input type="password" class="form-control" id="password" name ="password" placeholder="password123" required>
+                        <input type="password" class="form-control" id="password1" name ="password1" placeholder="password123" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputPassword">Confirmar password</label>
+                        <input type="password" class="form-control" id="password2" name ="password2" placeholder="password123" required>
                     </div>
                     <button type="submit" id="btn-registro" class="btn btn-primary btn-dark">Registrarse</button>
                 </form>
-            </div>
+             </div>
 
-					</div>
-			</div>
+	    	</div>
+    	</div>
 
-		</div>
+	</div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

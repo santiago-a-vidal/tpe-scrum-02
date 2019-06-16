@@ -7,23 +7,23 @@ class RegistroModel extends Model {
   //Registrarse, cargo los datos en la BBDD
   function store($usuario, $password,$admin)
     {
-      $sentencia = $this->db->prepare('INSERT INTO usuario(nombre,password,admin) VALUES(?,?,?)');
+      $sentencia = $this->db->prepare('INSERT INTO usuario(mail,nombre,apellido,password,admin) VALUES(?,?,?,?,?)');
       $sentencia->execute([$usuario,$password,$admin]);
     }
 
     //Traer todo el usuario por id
-    function getUsuario($usuario)
+    function getUsuario($mail)
       {
-        $sentencia = $this->db->prepare( "SELECT * FROM usuario WHERE nombre = ? LIMIT 1");
-        $sentencia->execute([$usuario]);
+        $sentencia = $this->db->prepare( "SELECT * FROM usuario WHERE mail = ? LIMIT 1");
+        $sentencia->execute([$mail]);
         return $sentencia->fetch(PDO::FETCH_ASSOC);
       }
 
     //Traer solo el id de usuario   
-    function getUsuarioID($usuario)
+    function getUsuarioID($mail)
        {
-        $sentencia = $this->db->prepare( "SELECT id_usuario FROM usuario WHERE nombre = ? LIMIT 1");
-        $sentencia->execute([$usuario]);
+        $sentencia = $this->db->prepare( "SELECT id_usuario FROM usuario WHERE mail = ? LIMIT 1");
+        $sentencia->execute([$mail]);
         return $sentencia->fetch(PDO::FETCH_ASSOC);
        }
 }

@@ -14,14 +14,14 @@ class RegistroController extends Controller{
 
 	public function VerificarLogin()
 	  {
-		if(null !== ($_POST['usuario']) && null !== ($_POST['password'])){
-		  $email = $_POST['usuario'];
+		if(null !== ($_POST['mail']) && null !== ($_POST['password'])){
+		  $mail = $_POST['mail'];
 		  $password = $_POST['password'];
-		  $dbUsuario = $this->model->getUsuario($email);
+		  $dbUsuario = $this->model->getUsuario($mail);
 		  if(!empty($dbUsuario)){
 				if(password_verify($password, $dbUsuario['password'])){
 				    session_start();
-					$_SESSION['user'] = $dbUsuario['nombre'];
+					$_SESSION['user'] = $dbUsuario['mail'];
 					$_SESSION['admin'] = $dbUsuario['admin'];
 					$_SESSION['idUsuario'] = $dbUsuario['id_usuario'];
 					if($dbUsuario['admin'] == 1){
@@ -47,14 +47,18 @@ class RegistroController extends Controller{
         $this->excepcionesIssetRegistro();
           try
             { //Verificacion de longitud de contraseña y que un mismo usuario no se registre dos veces
-              if (strlen($_POST['password'])<6)
+              if (strlen($_POST['password1'])<6)
                 throw new Exception("La contraseña debe tener mas de 6 caracteres");
-              $usuario = $this->model->getUsuario($_POST['usuario']);
-              if ($usuario)
+              if (strlen($_POST['password2'])<6)
+                throw new Exception("La contraseña debe tener mas de 6 caracteres");
+              if (($_POST['password1']) !== ($_POST['password2']))
+                throw new Exception("Las contraseñas no coinciden");  
+              $mail = $this->model->getUsuario($_POST['mail']);
+              if ($mail)
                   throw new Exception("Usuario ya registrado");
               $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
               $admin=false;
-              $this->model->store($_POST['usuario'],$password,$admin);
+              $this->model->store($_POST['mail'],$_POST['nombre'],$_POST['apellido'],$password,$admin);
               header('Location: '.HOME);
             }
             catch (Exception $e)
@@ -72,8 +76,8 @@ class RegistroController extends Controller{
 //Caso en los que no se ingresan datos de usuario o contraseña en el formulario
   private function excepcionesIssetRegistro()
     {
-      if (!isset($_POST['usuario']))
-        throw new Exception("No se recibio el nombre de usuario");
+      if (!isset($_POST['mail']))
+        throw new Exception("No se recibio el mail de usuario");
       if (!isset($_POST['password']))
         throw new Exception("No se recibio la contraseña");
     }

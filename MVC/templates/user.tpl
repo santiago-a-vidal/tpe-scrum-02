@@ -14,12 +14,9 @@
 							 <div class="alert alert-danger" role="alert">{$error}</div>
 							{/if}
 							<h6 class="mt-3">Marque en el mapa la ubicacion de la basura.</h6>
-							<label for="InputUsuario">Usuario</label>
-							<input type="text" class="form-control" id="usuario" name="usuario" placeholder="" value="" required>
-							<label for="InputLatitud">Latitud</label>
-							<input type="latitud" class="form-control lat" id="latitud" name="latitud" placeholder="-37.318796" value="" required>
-							<label for="InputLongitud">Longitud</label>
-							<input type="longitud" class="form-control lat" id="longitud" name="longitud" placeholder="-59.138583" value="" required>
+							<input type="text" class="form-control" id="usuario" name="usuario" placeholder="{$smarty.session.user}" value="{$smarty.session.user}" hidden="hidden">
+							<input type="text" class="form-control lat" id="latitud" name="latitud"  value="" hidden="hidden">
+							<input type="text" class="form-control lat" id="longitud" name="longitud" value="" hidden="hidden">
 							<br>
 							<h5>Descripcion (opcional)</h5>
 							<textarea class="form-control" id="descripcion" name="descripcion" rows="5"></textarea>

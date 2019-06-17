@@ -7,11 +7,14 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <title>Basura Tandil</title>
+<link rel="shortcut icon" href="images/basura.ico">
 </head>
 <body>
 
 {if (isset($smarty.session.user))}
-
-{include file="navUsuario.tpl"}
-
+    {if ($smarty.session.admin == 0)}
+        {include file="navUsuario.tpl"}
+    {else}
+        {include file="navAdmin.tpl"}
+    {/if}
 {/if}

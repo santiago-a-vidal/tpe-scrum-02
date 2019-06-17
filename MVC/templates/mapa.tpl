@@ -6,4 +6,6 @@
 	  <image class="imagen2" src="images/cuadrilla.jpg">
 	</div>
   </div>
-  {$codigo_reporte}
+  {if !empty($codigo_reporte)}
+	{$codigo_reporte}
+  {/if}

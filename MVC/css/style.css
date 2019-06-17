@@ -39,39 +39,32 @@ th{
     font-weight: bold;
 }
 
-/**/
-
-.bordeArribaNews h1{
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 2em;
+.bordeArribaNews h3{
+    margin-left: 2%;
 }
 
 .bordeArribaNews{
-    background-color: #cc1a25;
-}
-
-.bordeArribaNews{
+    background-color:darkgrey;
     margin-top: 3%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-}
-
-    .bordeArribaNews h1{
-        padding: 1%;
-        color: white;
-        margin-left: 2%;
-    }
-
-.bordeArribaNews {
     height: 40px;
-}
-
-.bordeArribaNews {
     margin-bottom: 1%;
 }
 
-    .bordeArribaNews h1{
-        margin-top: 20%;
-        padding: 2%;
-        font-size: 2em;
-    }
+.login, .register{
+    display: inline-block; 
+}
+
+.register{
+    margin-left: 60%;
+}
+
+.icono{
+    width: 40px;
+    margin-right: 10px;
+}
+
+.nombre{
+    margin-left: 20%;
+}

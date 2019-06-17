@@ -35,6 +35,7 @@ function addInfoBubble(map) {
     ui.addBubble(bubble);
     }, false);
 
+        let numero_reporte = document.getElementsByClassName('id_reporte');
         let longitud = document.getElementsByClassName('longitud');
         let latitud = document.getElementsByClassName('latitud');
         let foto = document.getElementsByClassName('foto');
@@ -43,7 +44,7 @@ function addInfoBubble(map) {
         for(let i = 0; i < longitud.length; i++){
 
             addMarkerToGroup(group, {lat: latitud[i].innerHTML, lng: longitud[i].innerHTML},
-                '<div class="infoReporte"><div><a> <img class="reporte" src="'+foto[i].innerHTML+'"></a>' +
+                '<div class="infoReporte"><div><p>'+numero_reporte[i].innerHTML +'</p><a> <img class="reporte" src="'+foto[i].innerHTML+'"></a>' +
                 '</div><div> '+descripcion[i].innerHTML+'</div></div>');
 
         }
@@ -68,7 +69,7 @@ let defaultLayers = platform.createDefaultLayers({
 let map = new H.Map(document.getElementById('map'),
     defaultLayers.normal.map,{
     center: {lat: -37.32167, lng: -59.13316},
-    zoom: 14,
+    zoom: 15,
     pixelRatio: pixelRatio
 });
 

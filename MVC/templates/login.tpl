@@ -13,30 +13,32 @@
 		         <div class="alert alert-danger" role="alert">{$error}</div>
 						{/if}
             <div class="mb-3">
-                <h3>Iniciar sesion</h3>
+                <h3>Iniciar sesión</h3>
             </div>
-            <div class="">
-                <form action="loginuser" method="post">
-                    <div class="form-group">
-                        <label for="InputName">Usuario</label>
-                        <input type="email" class="form-control" id="email" name ="usuario" placeholder="usuario@ejemplo.com" aria-describedby="emailHelp" placeholder="" required>
+                    <form action="loginuser" method="post">
+                        <div class="form-group">
+                            <label for="InputName">Usuario</label>
+                            <input type="email" class="form-control" id="email" name ="mail" placeholder="usuario@ejemplo.com" aria-describedby="emailHelp" placeholder="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputPassword">Password</label>
+                            <input type="password" class="form-control" id="password" name ="password" placeholder="password123" required>
+                        </div>
+                <div class="formulario">
+                    <div class="login">
+                            <button type="submit" id="btn-login" class="btn btn-primary btn-dark">Ingresar</button>                        
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="InputPassword">Password</label>
-                        <input type="password" class="form-control" id="password" name ="password" placeholder="password123" required>
+                    <div class="register">
+                    <p>¿No tienes cuenta aún?</p>
+                        <form action="register" method="get">
+                            <button type="submit" id="btn-registro" class="btn btn-primary btn-dark">Registrar</button>
+                        </form>
                     </div>
-                    <button type="submit" id="btn-login" class="btn btn-primary btn-dark">Ingresar</button>
-                    
-                </form>
-				<form action="register" method="get">
-					<button type="submit" id="btn-registro" class="btn btn-primary btn-dark">Registrar usuario</button>
-				</form>
-            </div>
-
-					</div>
+                </div>
 			</div>
-
 		</div>
+	</div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

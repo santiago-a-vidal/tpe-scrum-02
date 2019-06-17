@@ -5,10 +5,10 @@ require_once 'Model.php';
 class RegistroModel extends Model {
 
   //Registrarse, cargo los datos en la BBDD
-  function store($usuario, $password,$admin)
+  function store($mail, $nombre, $apellido, $password,$admin)
     {
       $sentencia = $this->db->prepare('INSERT INTO usuario(mail,nombre,apellido,password,admin) VALUES(?,?,?,?,?)');
-      $sentencia->execute([$usuario,$password,$admin]);
+      $sentencia->execute([$mail, $nombre, $apellido, $password,$admin]);
     }
 
     //Traer todo el usuario por id

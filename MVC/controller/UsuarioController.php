@@ -16,12 +16,11 @@ class UsuarioController extends SecuredController{
     }
 
     function Home($codigo_reporte = ''){
-/*		session_start();
-        if(!empty($_SESSION['user'])){*/
+        if(!empty($_SESSION['user'])){
             $this->NavegacionView->Home($codigo_reporte);
-/*        }else{
+        }else{
           header('Location: ' .LOGIN);
-        }*/
+        }
       }
 
       function misReportes(){

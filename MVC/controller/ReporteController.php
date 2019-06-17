@@ -9,7 +9,7 @@ require_once('UsuarioController.php');
 
     function __construct()
       {
-		parent::__construct();
+		    parent::__construct();
         $this->model = new ReporteModel();
         $this->modelUsuario = new RegistroModel();
       }
@@ -22,8 +22,8 @@ require_once('UsuarioController.php');
           if (!$id_usuario)
               throw new Exception("Usuario no registrado");
           $this->model->storeReporte($id_usuario['id_usuario'],$_POST['latitud'],$_POST['longitud'],$imagen,$_POST['descripcion']);
-        $codigo_reporte ="<script language='JavaScript'>alert('Codigo de Reporte: ".$this->model->lastInsertId()."')</script>";
-		$this->Home($codigo_reporte);
+          $codigo_reporte ="<script language='JavaScript'>alert('Codigo de Reporte: ".$this->model->lastInsertId()."')</script>";
+		      $this->Home($codigo_reporte);
         }
         catch (Exception $e)
           {

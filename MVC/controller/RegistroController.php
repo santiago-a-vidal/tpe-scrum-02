@@ -14,16 +14,19 @@ class RegistroController extends Controller{
 
 	public function VerificarLogin()
 	  {
-		if(null !== ($_POST['mail']) && null !== ($_POST['password'])){
-		  $mail = $_POST['mail'];
+		if((!empty($_POST['mail'])) && (!empty($_POST['password']))){
+      $mail = $_POST['mail'];
 		  $password = $_POST['password'];
 		  $dbUsuario = $this->model->getUsuario($mail);
 		  if(!empty($dbUsuario)){
 				if(password_verify($password, $dbUsuario['password'])){
-				    session_start();
+            session_start();
+          //Guardamos los atributos del usuario en el SESSION. 
+          $_SESSION['idUsuario'] = $dbUsuario['id_usuario'];
 					$_SESSION['user'] = $dbUsuario['mail'];
-					$_SESSION['admin'] = $dbUsuario['admin'];
-					$_SESSION['idUsuario'] = $dbUsuario['id_usuario'];
+          $_SESSION['admin'] = $dbUsuario['admin'];
+          $_SESSION['nombre'] = $dbUsuario['nombre'];
+          $_SESSION['apellido'] = $dbUsuario['apellido'];
 					if($dbUsuario['admin'] == 1){
 						$this->view->HomeAdmin();
 					}else{
@@ -56,7 +59,7 @@ class RegistroController extends Controller{
               $mail = $this->model->getUsuario($_POST['mail']);
               if ($mail)
                   throw new Exception("Usuario ya registrado");
-              $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+              $password = password_hash($_POST['password1'], PASSWORD_DEFAULT);
               $admin=false;
               $this->model->store($_POST['mail'],$_POST['nombre'],$_POST['apellido'],$password,$admin);
               header('Location: '.HOME);
@@ -78,7 +81,7 @@ class RegistroController extends Controller{
     {
       if (!isset($_POST['mail']))
         throw new Exception("No se recibio el mail de usuario");
-      if (!isset($_POST['password']))
+      if (!isset($_POST['password1']))
         throw new Exception("No se recibio la contraseña");
     }
 

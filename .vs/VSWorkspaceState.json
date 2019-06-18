@@ -5,10 +5,11 @@
     "\\MVC\\config",
     "\\MVC\\controller",
     "\\MVC\\css",
+    "\\MVC\\images",
     "\\MVC\\model",
     "\\MVC\\templates",
     "\\MVC\\view"
   ],
-  "SelectedNode": "\\MVC\\controller\\UsuarioController.php",
+  "SelectedNode": "\\MVC\\images\\basura.ico",
   "PreviewInSolutionExplorer": false
 }

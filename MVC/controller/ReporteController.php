@@ -14,6 +14,7 @@ require_once('UsuarioController.php');
         $this->modelUsuario = new RegistroModel();
       }
 
+//Una vez completado el formulario de reporte, actualizo la BBDD con el nuevo reporte y muestro el numero de reporte al usuario
     public function EnviarReporte()
       {
         try{
@@ -35,7 +36,6 @@ require_once('UsuarioController.php');
         $id_reporte = $_POST['id_reporte'];
         $this->model->borrarReporte($id_reporte);
         header('Location: '. MAPAADMIN);
-      
       }
 
   }

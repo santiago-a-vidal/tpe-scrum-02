@@ -12,16 +12,19 @@ class RegistroController extends Controller{
     }
 
 
+//Verificar los datos ingresados por el usuario en el formulario de login
 	public function VerificarLogin()
 	  {
 		if((!empty($_POST['mail'])) && (!empty($_POST['password']))){
+    //Completo los campos de mail y contrasena, traigo el usuario de la BBDD
       $mail = $_POST['mail'];
 		  $password = $_POST['password'];
 		  $dbUsuario = $this->model->getUsuario($mail);
 		  if(!empty($dbUsuario)){
+      //El usuario existe en la BBDD
 				if(password_verify($password, $dbUsuario['password'])){
             session_start();
-          //Guardamos los atributos del usuario en el SESSION. 
+          //Guardamos los atributos del usuario en el SESSION.
           $_SESSION['idUsuario'] = $dbUsuario['id_usuario'];
 					$_SESSION['user'] = $dbUsuario['mail'];
           $_SESSION['admin'] = $dbUsuario['admin'];
@@ -33,17 +36,20 @@ class RegistroController extends Controller{
 						$this->view->Home();
 					}
 				}else{
+        //Existe el usuario pero la contrasena es incorrecta
 					$this->view->errorFormLogin("Contraseña Incorrecta.");
 				}
 		  }else{
+      //No existe tal usuario en la BBDD
 			$this->view->errorFormLogin("Usuario Incorrecto.");
 		  }
 		}else{
+    //No completo los campos del formulario para ingresar
 		  $this->view->errorFormLogin("Debe Ingresarse Primero.");
 		}
 	  }
 
-  //Guardar la informacion de usuario y contraseña
+  //Checkear y guardar la informacion de usuario y contraseña
   public function VerificarRegistro(){
     try
       {
@@ -55,7 +61,7 @@ class RegistroController extends Controller{
               if (strlen($_POST['password2'])<6)
                 throw new Exception("La contraseña debe tener mas de 6 caracteres");
               if (($_POST['password1']) !== ($_POST['password2']))
-                throw new Exception("Las contraseñas no coinciden");  
+                throw new Exception("Las contraseñas no coinciden");
               $mail = $this->model->getUsuario($_POST['mail']);
               if ($mail)
                   throw new Exception("Usuario ya registrado");

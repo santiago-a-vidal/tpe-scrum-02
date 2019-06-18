@@ -19,7 +19,7 @@ require_once "./model/ReporteModel.php";
       $this->NavegacionView->Login();
     }
 
-	    function HomeAdmin(){
+	  function HomeAdmin(){
       session_start();
       $this->NavegacionView->HomeAdmin();
     }
@@ -30,8 +30,8 @@ require_once "./model/ReporteModel.php";
     }
 
     function Registro(){
-		$this->NavegacionView->Register();
-	}
+		  $this->NavegacionView->Register();
+	  }
 
     function MapaAdmin(){
       session_start();

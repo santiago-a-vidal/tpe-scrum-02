@@ -1,17 +1,22 @@
 <?php
 class SecuredController
 {
+
+//Inicializa la session y checkea la actividad para cerrar session en caso de ser necesario
   function __construct(){
     session_start();
     if(isset($_SESSION["user"])){
       if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
-        $this->logout(); // destruye la sesión, y vuelve al login
+      //Destruyo la session despues de inactividad por determinado tiempo y vuelvo al login
+        $this->logout();
       }
-        $_SESSION['LAST_ACTIVITY'] = time(); // actualiza el último instante de actividad
+        $_SESSION['LAST_ACTIVITY'] = time(); //Actualizo el último instante de actividad
     }else{
         header(LOGIN);
     }
   }
+
+//Destruye la session iniciada y redirige al login
   function logout(){
     session_start();
     session_destroy();

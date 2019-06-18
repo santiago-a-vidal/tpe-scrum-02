@@ -1,4 +1,4 @@
-**Retrospective Sprint 2**
+**Retrospective Sprint 3**
 
 **Que hicimos mal**
 1. Realizacion de testing a último momento
